@@ -13,32 +13,18 @@ const validateToken = (token: string): string => {
 }
 
 const AuthContext = createContext({
-  accessToken: '',
-  refreshToken: '',
   isLoggedIn: false,
-  validateAccessToken: (token: any) => {},
-  validateRefreshToken: (token: any) => {},
-  setLoggedIn: flag => {},
+  setLoggedIn: (_flag: boolean) => {},
 })
 
 const AuthProvider = ({ children }: { children: any }) => {
-  const [accessToken, setAccessToken] = useState('')
-  const [refreshToken, setRefreshToken] = useState('')
   const [isLoggedIn, setLoggedIn] = useState(false)
-  const validateAccessToken = (token: string) =>
-    setAccessToken(validateToken(token))
-  const validateRefreshToken = (token: string) =>
-    setRefreshToken(validateToken(token))
 
   return (
     <AuthContext.Provider
       value={{
-        accessToken,
         isLoggedIn,
-        refreshToken,
         setLoggedIn,
-        validateAccessToken,
-        validateRefreshToken,
       }}
     >
       {children}

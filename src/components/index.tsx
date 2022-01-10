@@ -1,3 +1,5 @@
-import { Card } from './Card/Card'
+import { Card } from './Card'
+import { Form } from './Form'
+import { FlippingCard } from './FlippingCard'
 
-export { Card }
+export { Card, Form, FlippingCard }

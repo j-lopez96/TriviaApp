@@ -17,12 +17,10 @@ const authLink = setContext(async (_: any) => {
   const headers: any = {}
   const token = (await EncryptedStorage.getItem('access_token')) || ''
   const validatedToken = validateToken(token)
-  console.log('validated Token', validatedToken)
   if (validatedToken !== '') {
     headers.authorization = `Bearer ${validatedToken}`
   }
 
-  console.log('HEaders', headers)
   return {
     headers,
   }

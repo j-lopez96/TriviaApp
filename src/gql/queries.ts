@@ -31,3 +31,40 @@ export type QuestionSetsType = {
     questionSets: [QuestionSetType]
   }
 }
+
+export const GET_QUESTION_SET = gql`
+  query questionSet($id: ID!) {
+    QuestionSet(id: $id) {
+      questions {
+        id
+        questionMessage
+        answerA
+        answerB
+        answerC
+        answerD
+        writeInAnswer
+        correctAnswer
+        multipleChoice
+      }
+    }
+  }
+`
+
+export type QuestionType = {
+  id: string
+  questionMessage: string
+  answerA: string
+  answerB: string
+  answerC: string
+  answerD: string
+  writeInAnswer: string
+  correctAnswer: correctAnswerEnum
+  multipleChoice: boolean
+}
+
+type correctAnswerEnum = {
+  answerA
+  answerB
+  answerC
+  answerD
+}

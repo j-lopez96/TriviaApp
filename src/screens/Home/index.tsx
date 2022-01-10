@@ -10,7 +10,7 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
   const [email, setEmail] = useState('jesus@google.com')
   const [password, setPassword] = useState('Password1')
   const styles = styleSheet()
-  const [login, { data, loading, error }] = useMutation(LOGIN_EMAIL)
+  const [login, { data, loading }] = useMutation(LOGIN_EMAIL)
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -35,6 +35,7 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
         'access_token',
         data.loginEmail.accessToken
       )
+      navigation.push('MyQuestionSets')
       setLoggedIn(true)
     }
   }
