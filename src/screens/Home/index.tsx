@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigation.push('MyQuestionSets')
+      navigation.navigate('MyQuestionSets')
     }
     const checkToken = async () => {
       const token = (await EncryptedStorage.getItem('access_token')) || ''

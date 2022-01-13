@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios --simulator='iPhone SE (2nd generation)'",
+    "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
+    "@react-navigation/drawer": "^6.1.8",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "graphql": "^16.2.0",
@@ -20,7 +21,7 @@
     "react-native": "0.66.4",
     "react-native-config": "^1.4.5",
     "react-native-encrypted-storage": "^4.0.2",
-    "react-native-gesture-handler": "^2.1.0",
+    "react-native-gesture-handler": "^2.1.1",
     "react-native-paper": "^4.11.1",
     "react-native-reanimated": "^2.3.1",
     "react-native-safe-area-context": "^3.3.2",
@@ -60,5 +61,5 @@
       "node"
     ]
   },
-  "type": "commonJS"
+  "type": "commonjs"
 }
